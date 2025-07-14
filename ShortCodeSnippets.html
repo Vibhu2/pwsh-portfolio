@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>201616004</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 align="Center";p style="color:blue";>My collection of Powershell Snippets </h1>
+<p>1.<strong>To get last boot time of the machine</strong>.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>   <span class="op">(</span><span class="fu">get-date</span><span class="op">)</span> <span class="op">-</span> <span class="op">(</span>Get<span class="op">-</span>ComputerInfo<span class="op">).</span><span class="fu">OsLastBootUpTime</span></span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>      <span class="op">(</span>Get<span class="op">-</span>ComputerInfo<span class="op">).</span><span class="fu">OsLastBootUpTime</span>       </span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>      <span class="op">(</span><span class="fu">Get-CimInstance</span> Win32_OperatingSystem<span class="op">).</span><span class="fu">LastBootUpTime</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>      </span></code></pre></div>
+<p>2.<strong>To get list of stopped services</strong>.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>   <span class="fu">Get-Service</span> <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op">{</span><span class="va">$_</span><span class="op">.</span><span class="fu">Status</span> <span class="op">-</span>eq <span class="st">&quot;Stopped&quot;</span> <span class="op">-</span>and <span class="va">$_</span><span class="op">.</span><span class="fu">Starttype</span> <span class="op">-</span>eq <span class="st">&quot;Automatic&quot;</span><span class="op">}</span></span></code></pre></div>
+<p>3.<strong>Setting execution Policy on machine</strong>.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>   <span class="fu">Set-ExecutionPolicy</span> <span class="op">-</span>ExecutionPolicy Unrestricted <span class="op">-</span>Scope CurrentUser</span></code></pre></div>
+<p>4.<strong>Find Drive space</strong>.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>   <span class="fu">Get-PSDrive</span> <span class="op">-</span>PSProvider FileSystem</span></code></pre></div>
+<p>5.Get Free Space for System Drive.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="fu">Get-PSDrive</span> <span class="va">$Env</span><span class="op">:</span>SystemDrive<span class="op">.</span><span class="fu">Trim</span><span class="op">(</span><span class="st">&#39;:&#39;</span><span class="op">)).</span><span class="fu">Free</span><span class="op">/</span>1GB</span></code></pre></div>
+<p>6.Check BIOS information.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="fu">Get-CimInstance</span> Win32_BIOS<span class="op">)</span></span></code></pre></div>
+<p>7.Check computer information</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-CimInstance</span> Win32_ComputerSystem </span></code></pre></div>
+<p>8.Check printer information on a machine.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">Get-CimInstance</span> Win32_Printer <span class="op">|</span> <span class="fu">Select-Object</span> Name<span class="op">,</span> PortName<span class="op">,</span> Default <span class="op">|</span> <span class="fu">Format-List</span></span></code></pre></div>
+<p>9.<strong>Keep System Awake ( VB ) Script</strong>.</p>
+<pre class="vbs"><code> set wsc = CreateObject(&quot;WScript.Shell&quot;)
+Do
+    &#39;Five minutes
+    WScript.Sleep(5*60*1000)
+    wsc.SendKeys(&quot;{F13}&quot;)
+Loop</code></pre>
+<p>10.Install Powershell using chocolaty.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ExecutionPolicy</span> Bypass <span class="op">-</span>Scope <span class="kw">Process</span> <span class="op">-</span>Force<span class="op">;</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">Net</span><span class="op">.</span><span class="fu">ServicePointManager</span><span class="op">]::</span>SecurityProtocol <span class="op">=</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">Net</span><span class="op">.</span><span class="fu">ServicePointManager</span><span class="op">]::</span>SecurityProtocol <span class="op">-</span>bor 3072<span class="op">;</span> <span class="fu">iex</span> <span class="op">((</span><span class="fu">New-Object</span> System<span class="op">.</span><span class="fu">Net</span><span class="op">.</span><span class="fu">WebClient</span><span class="op">).</span><span class="fu">DownloadString</span><span class="op">(</span><span class="st">&#39;https://community.chocolatey.org/install.ps1&#39;</span><span class="op">))</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>choco install powershell <span class="op">-</span>force <span class="op">--</span>yes</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>choco install powershell<span class="op">-</span>core <span class="op">-</span>force <span class="op">--</span>yes</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Start-Sleep</span> <span class="op">-</span>Seconds 90</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="kw">exit</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">exit</span></span></code></pre></div>
+<p>11.Installing winget on a machine using command line.</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">invoke-webrequest</span></span></code></pre></div>
+<p>12.Checking who rebooted a production server.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-EventLog</span> –Log System –Newest 100 <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op">{</span><span class="va">$_</span><span class="op">.</span><span class="fu">EventID</span> –eq ‘1074’<span class="op">}</span> <span class="op">|</span> <span class="fu">FT</span> MachineName<span class="op">,</span> UserName<span class="op">,</span> TimeGenerated <span class="op">-</span>AutoSize</span></code></pre></div>
+<p>14.check Computer domain</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="fu">Get-CimInstance</span> Win32_ComputerSystem<span class="op">).</span><span class="fu">Domain</span></span></code></pre></div>
+<p>15.Restart LTServices.</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Restart-Service</span> <span class="op">-</span>Name ltsvcmon</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Restart-Service</span> <span class="op">-</span>Name labvnc</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Restart-Service</span> <span class="op">-</span>Name ltservice</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Stop-Process</span> <span class="op">-</span>Name ltsvcmon<span class="op">.</span><span class="fu">exe</span> <span class="op">-</span>Force</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Stop-Process</span> <span class="op">-</span>Name ltsvc<span class="op">.</span><span class="fu">exe</span> <span class="op">-</span>Force</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Stop-Process</span> <span class="op">-</span>Name lttray<span class="op">.</span><span class="fu">exe</span> <span class="op">-</span>Force</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">Stop-Process</span> <span class="op">-</span>Name labvnc<span class="op">.</span><span class="fu">exe</span> <span class="op">-</span>Force</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Stop-Process</span> <span class="op">-</span>Name labtechupdate<span class="op">.</span><span class="fu">exe</span> <span class="op">-</span>Force</span></code></pre></div>
+<p>16.Enable Remote Desktop using PowerShell</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ItemProperty</span> <span class="op">-</span>Path <span class="st">&#39;HKLM:\System\CurrentControlSet\Control\Terminal Server&#39;</span> <span class="op">-</span>name <span class="st">&quot;fDenyTSConnections&quot;</span> <span class="op">-</span>value 0</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>Enable<span class="op">-</span>NetFirewallRule <span class="op">-</span>DisplayGroup <span class="st">&quot;Remote Desktop&quot;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">exit</span></span></code></pre></div>
+<p>17.Disable Remote Desktop using PowerShell</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ItemProperty</span> <span class="op">-</span>Path <span class="st">&#39;HKLM:\System\CurrentControlSet\Control\Terminal Server&#39;</span> <span class="op">-</span>name <span class="st">&quot;fDenyTSConnections&quot;</span> <span class="op">-</span>value 1</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>Disable<span class="op">-</span>NetFirewallRule <span class="op">-</span>DisplayGroup <span class="st">&quot;Remote Desktop&quot;</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">exit</span></span></code></pre></div>
+<p>18.Create an Admin User Account.</p>
+<pre class="cmd"><code>net user /add itadmin Welcome1
+net localgroup administrators itadmin /add</code></pre>
+<p>or</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="va">$Password</span> <span class="op">=</span> <span class="fu">Read-Host</span> <span class="op">-</span>AsSecureString</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>New<span class="op">-</span>LocalUser <span class="st">&quot;itadmin&quot;</span> <span class="op">-</span>Password <span class="va">$Password</span> <span class="op">-</span>FullName <span class="st">&quot;itadmin&quot;</span> <span class="op">-</span>Description <span class="st">&quot;local admin account.&quot;</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>Add<span class="op">-</span>LocalGroupMember <span class="op">-</span>Group <span class="st">&quot;Administrators&quot;</span> <span class="op">-</span>Member <span class="st">&quot;itadmin&quot;</span></span></code></pre></div>
+<p>19.To Run Commands in current powershell instance without changing
+global execution policies use below snippet.</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ExecutionPolicy</span> Bypass <span class="op">-</span>Scope <span class="kw">Process</span></span></code></pre></div>
+<p>20.Check list of local installed softwares</p>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ItemProperty</span> HKLM<span class="op">:</span>\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\<span class="op">*</span> <span class="op">|</span> <span class="fu">Select-Object</span> DisplayName<span class="op">,</span> DisplayVersion<span class="op">,</span> Publisher<span class="op">,</span> InstallDate <span class="op">|</span> <span class="fu">Format-Table</span> –AutoSize <span class="op">&gt;</span> C<span class="op">:</span>\InstalledSoftwareList<span class="op">.</span><span class="fu">txt</span></span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-CimInstance</span> <span class="op">-</span>ClassName win32_product</span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-WmiObject</span> <span class="op">-</span>Class Win32_Product <span class="op">|</span> <span class="fu">Select-Object</span> Name<span class="op">,</span>Vendor<span class="op">,</span>version<span class="op">,</span>Caption</span></code></pre></div>
+<p>21.Checking Biggest files</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gci</span> <span class="op">-</span>r<span class="op">|</span><span class="fu">sort</span> <span class="op">-</span>descending <span class="op">-</span>property length <span class="op">|</span> <span class="fu">select</span> <span class="op">-</span>first 10 name<span class="op">,</span> @<span class="op">{</span>Name<span class="op">=</span><span class="st">&quot;Gigabytes&quot;</span><span class="op">;</span>Expression<span class="op">={[</span>Math<span class="op">]::</span>round<span class="op">(</span><span class="va">$_</span><span class="op">.</span><span class="fu">length</span> <span class="op">/</span> 1GB<span class="op">,</span> 2<span class="op">)}}</span></span></code></pre></div>
+<p>22.Set Firewall interface settings [ Public,Private,Domain]</p>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>Set<span class="op">-</span>NetConnectionProfile <span class="op">-</span>NetworkCategory DomainAuthenticated</span></code></pre></div>
+<p>23.How to Fix Windows 11 SSD Problem Using PowerShell</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>Get<span class="op">-</span>PhysicalDisk </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>Get<span class="op">-</span>PhysicalDisk <span class="op">|</span> Set<span class="op">-</span>PhysicalDisk <span class="op">-</span>MediaType SSD</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>Get<span class="op">-</span>PhysicalDisk </span></code></pre></div>
+<p>24.Find out maximum Supported RAM on a machine where MaxCapacity is
+in KB and devided in total no of devices</p>
+<pre class="cmd"><code>wmic memphysical get MaxCapacity, MemoryDevices
+
+Result:-
+MaxCapacity  MemoryDevices
+67108864     2
+</code></pre>
+<p>25.Universal Powershell installation/Deployment script.</p>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">iex</span> <span class="st">&quot;&amp; { $(irm https://aka.ms/install-powershell.ps1)} -usemsi -quiet&quot;</span></span></code></pre></div>
+<p>26.Get-loggedin username</p>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="op">((</span><span class="fu">Get-WMIObject</span> <span class="op">-</span>ClassName Win32_ComputerSystem<span class="op">).</span><span class="fu">Username</span><span class="op">).</span><span class="fu">Split</span><span class="op">(</span><span class="st">&#39;\&#39;</span><span class="op">)[</span>1<span class="op">]</span></span></code></pre></div>
+<ol start="27" type="1">
+<li>Script to excludes all bult-in or special profile folders</li>
+</ol>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-WmiObject</span> <span class="op">-</span>Class Win32_UserProfile <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op">{</span><span class="va">$_</span><span class="op">.</span><span class="fu">Special</span> <span class="op">-</span>eq <span class="va">$false</span><span class="op">}</span> <span class="op">|</span> <span class="fu">Select-Object</span> LocalPath<span class="op">,</span> LastUseTime</span></code></pre></div>
+<ol start="28" type="1">
+<li>Discover computers Public ip</li>
+</ol>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="fu">Invoke-RestMethod</span> ipinfo<span class="op">.</span><span class="fu">io</span><span class="op">/</span>json<span class="op">).</span><span class="fu">ip</span></span></code></pre></div>
+<ol start="29" type="1">
+<li>Get computer model</li>
+</ol>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="fu">Get-CimInstance</span> Win32_ComputerSystem<span class="op">).</span><span class="fu">model</span></span></code></pre></div>
+<p>30 get computer serial number</p>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="fu">Get-CimInstance</span> Win32_Bios<span class="op">).</span><span class="fu">serialnumber</span></span></code></pre></div>
+<p>31 get computer Biosversion</p>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="fu">Get-CimInstance</span> Win32_Bios<span class="op">).</span><span class="fu">smbbiosversion</span></span></code></pre></div>
+<h2 id="active-directory-one-liners">Active Directory one liners</h2>
+<p>Before running any ActiveDirectory commands we need to import
+Ad-Module. &gt; Import-Module ActiveDirectory</p>
+<ol type="1">
+<li>Get All Members of a Group by name and ID</li>
+</ol>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ADGroupMember</span> <span class="op">-</span>Identity <span class="op">&lt;</span>group_name<span class="op">&gt;</span> <span class="op">-</span>Recursive <span class="op">|</span> <span class="fu">select</span> name<span class="op">,</span>SamAccountName</span></code></pre></div>
+<p>2.Finding inactive users (no activity for 195 days or more)</p>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write-Host</span> <span class="st">&quot;Getting inactive User accounts the are enabled&quot;</span> n</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="va">$inacUser</span> <span class="op">=</span> <span class="fu">Search-ADAccount</span> <span class="op">-</span>AccountInactive <span class="op">-</span>TimeSpan <span class="va">$tspan</span> <span class="op">-</span>UsersOnly <span class="op">|</span><span class="fu">Where-Object</span> <span class="op">{</span> <span class="va">$_</span><span class="op">.</span><span class="fu">Enabled</span> <span class="op">-</span>eq <span class="va">$true</span> <span class="op">}</span> <span class="op">|</span><span class="fu">select</span> name<span class="op">,</span>DistinguishedName<span class="op">,</span>LastLogonDate</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-host</span> <span class="va">$inacuser</span><span class="op">.</span><span class="fu">count</span> <span class="op">-</span>foreground Green “Number of inactive user accounts that are enabled”</span></code></pre></div>
+<p>3.Finding New Users created in last 7 days.</p>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write-Host</span> <span class="st">&quot;Getting users created within a week.&quot;</span> n</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="va">$ADuserInWeek</span> <span class="op">=</span> <span class="fu">Get-ADUser</span> <span class="op">-</span>Filter <span class="op">{</span>whenCreated <span class="op">-</span>ge <span class="va">$week</span><span class="op">}</span> <span class="op">-</span>Properties Whencreated <span class="op">|</span> <span class="fu">select</span> Name<span class="op">,</span>whenCreated<span class="op">,</span>DistinguishedName</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Host</span> <span class="va">$ADUserinweek</span><span class="op">.</span><span class="fu">count</span> <span class="op">-</span>ForegroundColor Green “Number of users created <span class="kw">in</span> the last 7 days” `n</span></code></pre></div>
+<p>4.Find Domain Controllers on Your Domain.</p>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>Resolve<span class="op">-</span>DnsName <span class="op">-</span>Type ALL <span class="op">-</span>Name _ldap<span class="op">.</span><span class="fu">_tcp</span><span class="op">.</span><span class="fu">dc</span><span class="op">.</span><span class="fu">_msdcs</span><span class="op">.</span><span class="va">$env</span><span class="op">:</span>userdnsdomain</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get-ciminstance</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>5<span class="op">.</span><span class="fu">List</span> Software Available <span class="kw">for</span> Uninstall <span class="op">.</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>```Powershell</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ItemProperty</span> HKLM<span class="op">:</span>\Software\Microsoft\Windows\CurrentVersion\Uninstall\<span class="op">*</span> <span class="op">|</span> <span class="fu">Select-Object</span> DisplayName<span class="op">,</span> DisplayVersion<span class="op">,</span> Publisher<span class="op">,</span> InstallDate <span class="op">|</span> <span class="fu">Format-Table</span></span></code></pre></div>
+<p>6.Install PowerShell Core (6 and 7).</p>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Invoke-Expression</span> <span class="st">&quot;&amp; { $(Invoke-RestMethod -Uri aka.ms/install-powers…) }&quot;</span> <span class="op">-</span>UseMSI <span class="op">-</span>Preview</span></code></pre></div>
+<p>7.<strong>Get ADuser last logon information of all the
+users</strong></p>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ADUser</span> <span class="op">-</span>Filter <span class="op">{</span>enabled <span class="op">-</span>eq <span class="va">$true</span><span class="op">}</span> <span class="op">-</span>Properties LastLogonTimeStamp <span class="op">|</span> <span class="fu">Select-Object</span> Name<span class="op">,</span>@<span class="op">{</span>Name<span class="op">=</span><span class="st">&quot;Stamp&quot;</span><span class="op">;</span> Expression<span class="op">={[</span>DateTime<span class="op">]::</span>FromFileTime<span class="op">(</span><span class="va">$_</span><span class="op">.</span><span class="fu">lastLogonTimestamp</span><span class="op">).</span><span class="fu">ToString</span><span class="op">(</span><span class="st">&#39;dd-MM-yyyy_hh:mm:ss&#39;</span><span class="op">)}}</span></span></code></pre></div>
+<p>8.Back up all production Group Policy Objects</p>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Backup-GPO</span> –All –Path C<span class="op">:</span>\Temp\AllGPO</span></code></pre></div>
+<ol start="9" type="1">
+<li><a
+href="https://docs.microsoft.com/en-us/azure/active-directory/devices/troubleshoot-device-dsregcmd#:~:text=To%20run%20diagnostics%20in%20SYSTEM,in%20the%20pre%2Dcheck%20phase.">Troubleshoot
+hybrid Azure Active Directory-joined devices</a></li>
+</ol>
+<pre class="cmd"><code>dsregcmd /status</code></pre>
+<p>10.Discovering AD-Roles and their corresponding servers.</p>
+<pre><code>Get-Adforest ad.wipro.com | Forest-table Schemamaster,domainnamingmaster</code></pre>
+<h2 id="list-current-fsmo-role-holders">11. List Current FSMO Role
+Holders</h2>
+<p>a ). Get domain level FSMO roles</p>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get-addomain</span> <span class="op">|</span> <span class="fu">select</span> InfrastructureMaster<span class="op">,</span> PDCEmulator<span class="op">,</span> RIDMaster</span></code></pre></div>
+<p>b ). Get forest level FSMO roles</p>
+<div class="sourceCode" id="cb47"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ADForest</span> <span class="op">|</span> <span class="fu">select</span> DomainNamingMaster<span class="op">,</span> SchemaMaster</span></code></pre></div>
+<h2 id="transfer-fsmo-roles">12. Transfer FSMO Roles</h2>
+<ol type="1">
+<li>Transfer PDCEmulator</li>
+</ol>
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Move-ADDirectoryServerOperationMasterRole</span> <span class="op">-</span>Identity <span class="st">&quot;dc1&quot;</span> PDCEmulator</span></code></pre></div>
+<ol start="2" type="1">
+<li>Transfer RIDMaster</li>
+</ol>
+<div class="sourceCode" id="cb49"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Move-ADDirectoryServerOperationMasterRole</span> <span class="op">-</span>Identity <span class="st">&quot;dc1&quot;</span> RIDMaster</span></code></pre></div>
+<ol start="3" type="1">
+<li>Transfer InfrastrctureMaster</li>
+</ol>
+<div class="sourceCode" id="cb50"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Move-ADDirectoryServerOperationMasterRole</span> <span class="op">-</span>Identity <span class="st">&quot;dc1&quot;</span> Infrastructuremaster</span></code></pre></div>
+<ol start="4" type="1">
+<li>Transfer DomainNamingMaster</li>
+</ol>
+<div class="sourceCode" id="cb51"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Move-ADDirectoryServerOperationMasterRole</span> <span class="op">-</span>Identity <span class="st">&quot;dc1&quot;</span> DomainNamingmaster</span></code></pre></div>
+<ol start="5" type="1">
+<li>Transfer SchemaMaster</li>
+</ol>
+<div class="sourceCode" id="cb52"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Move-ADDirectoryServerOperationMasterRole</span> <span class="op">-</span>Identity <span class="st">&quot;dc1&quot;</span> SchemaMaster</span></code></pre></div>
+<h2 id="join-a-pc-to-domain">13. Join a PC to Domain</h2>
+<div class="sourceCode" id="cb53"><pre
+class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Add-computer</span> <span class="op">-</span>DomainName contoso<span class="op">.</span><span class="fu">com</span> <span class="op">-</span>Credential contoso<span class="op">.</span><span class="fu">com</span>\Admin <span class="op">-</span>verbose <span class="op">-</span>Restart <span class="op">-</span>force</span></code></pre></div>
+</body>
+</html>
