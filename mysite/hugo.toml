@@ -1,0 +1,8 @@
+baseURL = 'Pwsh.in'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 
+
+[params]
+  author = "Vibhu Bhatnagar"
+  description = "A wonderful site"
